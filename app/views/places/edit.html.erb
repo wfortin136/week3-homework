@@ -4,10 +4,9 @@
   Wonder Category:
   <input list="w_types" name="type" value="<%= @place.w_type %>">
   <datalist id="w_types">
-    <option value="Ancient">
-    <option value="Natural">
-    <option value="Underwater">
-    <option value="Industrial">
+    <% Place.types.each do |type| %>  
+      <option value="<%= type %>">
+    <% end %>
   </datalist><br>
   Picture URL: <input name="url" type="url" value="<%= @place.url %>"><br>
   Admission Price: <input name="price" type="text" value="<%= @place.admis_price %>"><br>
