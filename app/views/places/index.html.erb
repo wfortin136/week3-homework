@@ -1,0 +1,15 @@
+<div>
+  <p> <%= link_to "Add a new wonder", "/places/new" %> </p>
+  
+  <% Place.types.each do |type| %>
+    <h2>Seven Wonders of the <%= type %> World <span Style="font-size: 12pt"><%= link_to "[Add]", "/places/new?type=#{type}"%></span> </h2>
+      <ul>
+      <% @places.each do |place| %>
+        <% if place.w_type == type %>
+        <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= place.admis_price%>)
+          <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+        <% end %>
+      <% end %>
+      </ul>
+  <% end %>
+</div>
