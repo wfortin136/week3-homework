@@ -4,6 +4,8 @@
   <h2> <%= @place.name %> </h2>
   <h4> (The <%= @place.w_type %> World) </h4> 
   <p> <%= @place.description %></p>
+  
+  <!-- need to convert price from cents to dollars -->
   <h3> Admission: <%= number_to_currency(@place.admis_price/100.0) %> </h3>
 
 </div>

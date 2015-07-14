@@ -7831,3 +7831,125 @@ Processing by PlacesController#show as HTML
   [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
   Rendered places/show.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 14:46:30 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.4ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/places/The%20Great%20Pyramid%20of%20Giza" for 127.0.0.1 at 2015-07-14 14:46:32 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Great Pyramid of Giza"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Great Pyramid of Giza' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 14:46:34 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-14 14:46:36 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 14:46:37 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 14:46:39 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf/edit" for 127.0.0.1 at 2015-07-14 14:46:43 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf/update?name=dfdsfdfsdf&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=42.10&description=%3Bfjalfkjaslfjkhaskjflha+awjrhlkjwfb" for 127.0.0.1 at 2015-07-14 14:46:49 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"dfdsfdfsdf", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"42.10", "description"=>";fjalfkjaslfjkhaskjflha awjrhlkjwfb", "id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 113[0m  [["admis_price", 4210]]
+  [1m[35m (62.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/dfdsfdfsdf
+Completed 302 Found in 67ms (ActiveRecord: 63.9ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 14:46:49 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 14:46:51 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 14:47:44 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 14:47:46 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=900.78&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 14:47:52 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"900.78", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 109[0m  [["admis_price", 90078]]
+  [1m[35m (50.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 54ms (ActiveRecord: 51.6ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 14:47:52 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 14:47:54 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.5ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.5ms)

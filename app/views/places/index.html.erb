@@ -1,9 +1,12 @@
 <div>
   <p> <%= link_to "Add a new wonder", "/places/new" %> </p>
   
+  <%# Loop through Different types of Wonders and populate each wonders section %>
+
   <% Place.types.each do |type| %>
     <h2>Seven Wonders of the <%= type %> World <span Style="font-size: 12pt"><%= link_to "[Add]", "/places/new?type=#{type}"%></span> </h2>
       <ul>
+      <%# Populate each Wonders section with an undordered list from database %>  
       <% @places.each do |place| %>
         <% if place.w_type == type %>
         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(place.admis_price/100.0)%>)

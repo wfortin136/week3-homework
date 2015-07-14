@@ -5,13 +5,16 @@ class PlacesController < ApplicationController
   end
   
   def show
+    #Get record from database
     @place = Place.find_by(:name => params[:id])
   end
 
   def delete
+    #Get record from database and delete.
     @place = Place.find_by(:name => params[:id])
     @place.delete
 
+    #Go to places to view updated list
     redirect_to root_url
   end
 
@@ -19,7 +22,10 @@ class PlacesController < ApplicationController
   end
   
   def create
+    #convert from text field to float, dollars to cents
     p_cents = params[:price].to_f*100.0
+
+    # Add to database
     Place.create(name: params[:name], url: params[:url], w_type: params[:type], admis_price: p_cents.to_i, description: params[:description] )
 
     redirect_to root_url
@@ -30,8 +36,10 @@ class PlacesController < ApplicationController
     render "edit"
   end
   def update
+    #convert from text field to float, dollars to cents
     p_cents = params[:price].to_f*100.0
-    puts p_cents.to_i
+   
+    #Update record in database
     current = Place.find_by(:name => params[:id])
     current.url = params[:url]
     current.name = params[:name]
