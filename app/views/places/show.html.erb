@@ -4,6 +4,6 @@
   <h2> <%= @place.name %> </h2>
   <h4> (The <%= @place.w_type %> World) </h4> 
   <p> <%= @place.description %></p>
-  <h3> Admission: <%= @place.admis_price %> </h3>
+  <h3> Admission: <%= number_to_currency(@place.admis_price/100.0) %> </h3>
 
 </div>

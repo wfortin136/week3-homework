@@ -19,7 +19,8 @@ class PlacesController < ApplicationController
   end
   
   def create
-    Place.create(name: params[:name], url: params[:url], w_type: params[:type], admis_price: params[:price], description: params[:description] )
+    p_cents = params[:price].to_f*100.0
+    Place.create(name: params[:name], url: params[:url], w_type: params[:type], admis_price: p_cents.to_i, description: params[:description] )
 
     redirect_to root_url
   end
@@ -29,11 +30,13 @@ class PlacesController < ApplicationController
     render "edit"
   end
   def update
+    p_cents = params[:price].to_f*100.0
+    puts p_cents.to_i
     current = Place.find_by(:name => params[:id])
     current.url = params[:url]
     current.name = params[:name]
     current.description = params[:description]
-    current.admis_price = params[:price]
+    current.admis_price = p_cents.to_i
     current.w_type = params[:type]
     current.save 
     redirect_to action: "show"

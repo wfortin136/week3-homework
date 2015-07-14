@@ -6,7 +6,7 @@
       <ul>
       <% @places.each do |place| %>
         <% if place.w_type == type %>
-        <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= place.admis_price%>)
+        <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(place.admis_price/100.0)%>)
           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
         <% end %>
       <% end %>

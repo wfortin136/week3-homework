@@ -5771,3 +5771,2063 @@ Processing by PlacesController#index as HTML
   [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
   Rendered places/index.html.erb within layouts/application (1.5ms)
 Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 18:00:45 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/new" for 127.0.0.1 at 2015-07-11 18:00:46 -0500
+Processing by PlacesController#new as HTML
+  Rendered places/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/submit_new?name=Awesome&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fe8%2F20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop%2C_Lakeshore_East_and_Illinois_Center.jpg&price=400&description=This%0D%0AThat%0D%0Adhflkjsdhf%0D%0Ajsdkghflsdjkgh%0D%0Agljshdfglkjhfsgjk%0D%0Ajhkjh" for 127.0.0.1 at 2015-07-11 18:02:02 -0500
+Processing by PlacesController#create as HTML
+  Parameters: {"name"=>"Awesome", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/e/e8/20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop,_Lakeshore_East_and_Illinois_Center.jpg", "price"=>"400", "description"=>"This\r\nThat\r\ndhflkjsdhf\r\njsdkghflsdjkgh\r\ngljshdfglkjhfsgjk\r\njhkjh"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", "400"], ["description", "This\r\nThat\r\ndhflkjsdhf\r\njsdkghflsdjkgh\r\ngljshdfglkjhfsgjk\r\njhkjh"], ["name", "Awesome"], ["url", "https://upload.wikimedia.org/wikipedia/commons/e/e8/20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop,_Lakeshore_East_and_Illinois_Center.jpg"], ["w_type", "Industrial"]]
+  [1m[35m (55.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 56.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 18:02:02 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Awesome" for 127.0.0.1 at 2015-07-11 18:02:04 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Awesome"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Awesome/edit" for 127.0.0.1 at 2015-07-11 18:02:07 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Awesome"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Awesome/update?name=Awesome&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fe8%2F20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop%2C_Lakeshore_East_and_Illinois_Center.jpg&price=400&description=%0D%0Ajsdkghflsdjkgh%0D%0Agljshdfglkjhfsgjk%0D%0Ajhkjh" for 127.0.0.1 at 2015-07-11 18:02:12 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Awesome", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/e/e8/20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop,_Lakeshore_East_and_Illinois_Center.jpg", "price"=>"400", "description"=>"\r\njsdkghflsdjkgh\r\ngljshdfglkjhfsgjk\r\njhkjh", "id"=>"Awesome"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "description" = ? WHERE "places"."id" = 78  [["description", "\r\njsdkghflsdjkgh\r\ngljshdfglkjhfsgjk\r\njhkjh"]]
+  [1m[36m (17.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Awesome
+Completed 302 Found in 20ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/places/Awesome" for 127.0.0.1 at 2015-07-11 18:02:12 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Awesome"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Awesome/edit" for 127.0.0.1 at 2015-07-11 18:02:15 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Awesome"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Awesome/update?name=Awesome&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fe8%2F20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop%2C_Lakeshore_East_and_Illinois_Center.jpg&price=400&description=jsdkghflsdjkgh%0D%0Agljshdfglkjhfsgjk%0D%0Ajhkjh%0D%0ABATMAN" for 127.0.0.1 at 2015-07-11 18:02:22 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Awesome", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/e/e8/20090524_Buildings_along_Chicago_River_line_the_south_border_of_the_Near_North_Side_and_Streeterville_and_the_north_border_of_Chicago_Loop,_Lakeshore_East_and_Illinois_Center.jpg", "price"=>"400", "description"=>"jsdkghflsdjkgh\r\ngljshdfglkjhfsgjk\r\njhkjh\r\nBATMAN", "id"=>"Awesome"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "description" = ? WHERE "places"."id" = 78  [["description", "jsdkghflsdjkgh\r\ngljshdfglkjhfsgjk\r\njhkjh\r\nBATMAN"]]
+  [1m[36m (52.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Awesome
+Completed 302 Found in 56ms (ActiveRecord: 52.6ms)
+
+
+Started GET "/places/Awesome" for 127.0.0.1 at 2015-07-11 18:02:22 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Awesome"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 18:02:29 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.5ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/delete" for 127.0.0.1 at 2015-07-11 18:03:00 -0500
+Processing by PlacesController#delete as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1
+  [1m[36mSQL (51.3ms)[0m  [1mDELETE FROM "places" WHERE "places"."id" = 77[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 54ms (ActiveRecord: 51.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 18:03:00 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Awesome/delete" for 127.0.0.1 at 2015-07-11 18:03:02 -0500
+Processing by PlacesController#delete as HTML
+  Parameters: {"id"=>"Awesome"}
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Awesome' LIMIT 1[0m
+  [1m[35mSQL (59.5ms)[0m  DELETE FROM "places" WHERE "places"."id" = 78
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 59.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 18:03:02 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-11 18:03:04 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:14:42 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Lighthouse%20of%20Alexandria" for 127.0.0.1 at 2015-07-12 10:14:49 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Lighthouse of Alexandria"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Lighthouse of Alexandria' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:14:56 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (55.9ms)[0m  DELETE FROM "places"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", "$44.00"], ["description", "The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza Necropolis bordering what is now El Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact."], ["name", "The Great Pyramid of Giza"], ["url", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg/1024px-Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", "PRICELESS"], ["description", "The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, and the only one whose location has not been definitely established."], ["name", "Hanging Gardens of Babylon"], ["url", "http://www.history.com/news/wp-content/uploads/2013/05/Hanging-Gardens-of-Babylon.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", "FA-REE"], ["description", "The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain."], ["name", "Temple of Artemis"], ["url", "https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", "PRICELESS"], ["description", "The Statue of Zeus at Olympia was a giant seated figure, about 13 m (43 ft) tall,[1] made by the Greek sculptor Phidias around 435 BC at the sanctuary of Olympia, Greece, and erected in the Temple of Zeus there. A sculpture of ivory plates and gold panels over a wooden framework, it represented the god Zeus sitting on an elaborate cedar wood throne ornamented with ebony, ivory, gold and precious stones. It was regarded as one of the Seven Wonders of the Ancient World until its eventual loss and destruction during the 5th century AD.[2] No copy of the statue has ever been found, and details of its form are known only from ancient Greek descriptions and representations on coins."], ["name", "Statue of Zeus at Olympia"], ["url", "http://www.annodomini.org.uk/wp-content/uploads/2012/08/ZeusStatue.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", "Free"], ["description", "The Mausoleum at Halicarnassus or Tomb of Mausolus Modern was a tomb built between 353 and 350 BC at Halicarnassus (present Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire, and Artemisia II of Caria, who was both his wife and his sister. The structure was designed by the Greek architects Satyros and Pythius of Priene."], ["name", "Mausoleum at Halicarnassus"], ["url", "https://upload.wikimedia.org/wikipedia/commons/f/f4/The_ruins_of_the_Mausoleum_at_Halicarnassus.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", "FREE"], ["description", "A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world."], ["name", "Colossus of Rhodes"], ["url", "http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", "Free"], ["description", "A lighthouse built by the Ptolemaic Kingdom between 280 and 247 BC which was between 393 and 450 ft (120 and 137 m) tall. It was one of the tallest man-made structures in the world for many centuries, and was regarded as one of the Seven Wonders of the Ancient World. Badly damaged by three earthquakes between AD 956 and 1323, it then became an abandoned ruin. It was the third longest surviving ancient wonder (after the Mausoleum at Halicarnassus and the extant Great Pyramid of Giza) until in 1480 the last of its remnant stones were used to build the Citadel of Qaitbay on the site. In 1994, French archaeologists discovered some remains of the lighthouse on the floor of Alexandria's Eastern Harbour."], ["name", "Lighthouse of Alexandria"], ["url", "http://www.touregypt.net/images/touregypt/pharos2.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", "$8.00"], ["description", "The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery."], ["name", "The Grand Canyon"], ["url", "https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg"], ["w_type", "Natural"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:15:16 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.3ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-12 10:15:20 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/edit" for 127.0.0.1 at 2015-07-12 10:20:31 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/update?name=The+Grand+Canyon&type=Natural&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faf%2FGrand_Canyon_view_from_Pima_Point_2010.jpg&price=%248.00&description=The+Grand+Canyon+is+a+steep-sided+canyon+carved+by+the+Colorado+River+in+the+state+of+Arizona+in+the+United+States.+It+is+contained+within+and+managed+by+Grand+Canyon+National+Park%2C+the+Kaibab+National+Forest%2C+Grand+Canyon-Parashant+National+Monument%2C+the+Hualapai+Tribal+Nation%2C+the+Havasupai+Tribe+and+the+Navajo+Nation.+President+Theodore+Roosevelt+was+a+major+proponent+of+preservation+of+the+Grand+Canyon+area%2C+and+visited+it+on+numerous+occasions+to+hunt+and+enjoy+the+scenery." for 127.0.0.1 at 2015-07-12 10:20:41 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"The Grand Canyon", "type"=>"Natural", "url"=>"https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg", "price"=>"$8.00", "description"=>"The Grand Canyon is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery.", "id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "description" = ? WHERE "places"."id" = 86[0m  [["description", "The Grand Canyon is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery."]]
+  [1m[35m (55.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/The%20Grand%20Canyon
+Completed 302 Found in 59ms (ActiveRecord: 56.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-12 10:20:41 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:20:46 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/new?type=Ancient" for 127.0.0.1 at 2015-07-12 10:20:50 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Ancient"}
+  Rendered places/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 36ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:20:56 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/new?type=Underwater" for 127.0.0.1 at 2015-07-12 10:21:01 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Underwater"}
+  Rendered places/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/submit_new?name=jklksdj&type=Underwater&url=http%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpg&price=2.00&description=sncldsjkhlfjdncnhlxd+http%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpg" for 127.0.0.1 at 2015-07-12 10:21:41 -0500
+Processing by PlacesController#create as HTML
+  Parameters: {"name"=>"jklksdj", "type"=>"Underwater", "url"=>"http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg", "price"=>"2.00", "description"=>"sncldsjkhlfjdncnhlxd http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", "2.00"], ["description", "sncldsjkhlfjdncnhlxd http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg"], ["name", "jklksdj"], ["url", "http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg"], ["w_type", "Underwater"]]
+  [1m[35m (54.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 55.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:21:41 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/jklksdj" for 127.0.0.1 at 2015-07-12 10:21:43 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"jklksdj"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/jklksdj/edit" for 127.0.0.1 at 2015-07-12 10:21:50 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"jklksdj"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/jklksdj/update?name=jklksdj&type=Underwater&url=http%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpg&price=40.00&description=sncldsjkhlfjdncnhlxd+http%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-%0D%0Apicture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-%0D%0Apicture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-%0D%0Apicture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpg" for 127.0.0.1 at 2015-07-12 10:22:08 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"jklksdj", "type"=>"Underwater", "url"=>"http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg", "price"=>"40.00", "description"=>"sncldsjkhlfjdncnhlxd http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg", "id"=>"jklksdj"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "admis_price" = ?, "description" = ? WHERE "places"."id" = 87  [["admis_price", "40.00"], ["description", "sncldsjkhlfjdncnhlxd http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg"]]
+  [1m[36m (47.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/jklksdj
+Completed 302 Found in 51ms (ActiveRecord: 47.7ms)
+
+
+Started GET "/places/jklksdj" for 127.0.0.1 at 2015-07-12 10:22:08 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"jklksdj"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/jklksdj/edit" for 127.0.0.1 at 2015-07-12 10:22:16 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"jklksdj"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/jklksdj/update?name=jklksdj&type=Underwater&url=http%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpg&price=40.00&description=sncldsjkhlfjdncnhlxd+http%3A%2F%2Fwww.independent.+co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-%0D%0Apicture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-%0D%0Apicture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-%0D%0Apicture.jpghttp%3A%2F%2Fwww.independent.co.uk%2Fincoming%2Farticle8465213.ece%2Falternates%2Fw620%2Fv2-cute-cat-picture.jpg" for 127.0.0.1 at 2015-07-12 10:22:28 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"jklksdj", "type"=>"Underwater", "url"=>"http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg", "price"=>"40.00", "description"=>"sncldsjkhlfjdncnhlxd http://www.independent. co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg", "id"=>"jklksdj"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "places" SET "description" = ? WHERE "places"."id" = 87  [["description", "sncldsjkhlfjdncnhlxd http://www.independent. co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-\r\npicture.jpghttp://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg"]]
+  [1m[36m (46.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/jklksdj
+Completed 302 Found in 51ms (ActiveRecord: 48.1ms)
+
+
+Started GET "/places/jklksdj" for 127.0.0.1 at 2015-07-12 10:22:28 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"jklksdj"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'jklksdj' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:22:47 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Statue%20of%20Zeus%20at%20Olympia/delete" for 127.0.0.1 at 2015-07-12 10:22:54 -0500
+Processing by PlacesController#delete as HTML
+  Parameters: {"id"=>"Statue of Zeus at Olympia"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Statue of Zeus at Olympia' LIMIT 1
+  [1m[36mSQL (49.4ms)[0m  [1mDELETE FROM "places" WHERE "places"."id" = 82[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 53ms (ActiveRecord: 49.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-12 10:22:55 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:47:08 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 140ms (Views: 139.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:47:08 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:53:42 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (287.3ms)
+Completed 200 OK in 347ms (Views: 346.1ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (5.3ms)[0m  DELETE FROM "places"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 4400], ["description", "The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza Necropolis bordering what is now El Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact."], ["name", "The Great Pyramid of Giza"], ["url", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg/1024px-Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, and the only one whose location has not been definitely established."], ["name", "Hanging Gardens of Babylon"], ["url", "http://www.history.com/news/wp-content/uploads/2013/05/Hanging-Gardens-of-Babylon.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain."], ["name", "Temple of Artemis"], ["url", "https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Statue of Zeus at Olympia was a giant seated figure, about 13 m (43 ft) tall,[1] made by the Greek sculptor Phidias around 435 BC at the sanctuary of Olympia, Greece, and erected in the Temple of Zeus there. A sculpture of ivory plates and gold panels over a wooden framework, it represented the god Zeus sitting on an elaborate cedar wood throne ornamented with ebony, ivory, gold and precious stones. It was regarded as one of the Seven Wonders of the Ancient World until its eventual loss and destruction during the 5th century AD.[2] No copy of the statue has ever been found, and details of its form are known only from ancient Greek descriptions and representations on coins."], ["name", "Statue of Zeus at Olympia"], ["url", "http://www.annodomini.org.uk/wp-content/uploads/2012/08/ZeusStatue.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "The Mausoleum at Halicarnassus or Tomb of Mausolus Modern was a tomb built between 353 and 350 BC at Halicarnassus (present Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire, and Artemisia II of Caria, who was both his wife and his sister. The structure was designed by the Greek architects Satyros and Pythius of Priene."], ["name", "Mausoleum at Halicarnassus"], ["url", "https://upload.wikimedia.org/wikipedia/commons/f/f4/The_ruins_of_the_Mausoleum_at_Halicarnassus.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world."], ["name", "Colossus of Rhodes"], ["url", "http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "A lighthouse built by the Ptolemaic Kingdom between 280 and 247 BC which was between 393 and 450 ft (120 and 137 m) tall. It was one of the tallest man-made structures in the world for many centuries, and was regarded as one of the Seven Wonders of the Ancient World. Badly damaged by three earthquakes between AD 956 and 1323, it then became an abandoned ruin. It was the third longest surviving ancient wonder (after the Mausoleum at Halicarnassus and the extant Great Pyramid of Giza) until in 1480 the last of its remnant stones were used to build the Citadel of Qaitbay on the site. In 1994, French archaeologists discovered some remains of the lighthouse on the floor of Alexandria's Eastern Harbour."], ["name", "Lighthouse of Alexandria"], ["url", "http://www.touregypt.net/images/touregypt/pharos2.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery."], ["name", "The Grand Canyon"], ["url", "https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg"], ["w_type", "Natural"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:54:25 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (54.9ms)[0m  DELETE FROM "places"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 4400], ["description", "The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza Necropolis bordering what is now El Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact."], ["name", "The Great Pyramid of Giza"], ["url", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg/1024px-Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, and the only one whose location has not been definitely established."], ["name", "Hanging Gardens of Babylon"], ["url", "http://www.history.com/news/wp-content/uploads/2013/05/Hanging-Gardens-of-Babylon.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain."], ["name", "Temple of Artemis"], ["url", "https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Statue of Zeus at Olympia was a giant seated figure, about 13 m (43 ft) tall,[1] made by the Greek sculptor Phidias around 435 BC at the sanctuary of Olympia, Greece, and erected in the Temple of Zeus there. A sculpture of ivory plates and gold panels over a wooden framework, it represented the god Zeus sitting on an elaborate cedar wood throne ornamented with ebony, ivory, gold and precious stones. It was regarded as one of the Seven Wonders of the Ancient World until its eventual loss and destruction during the 5th century AD.[2] No copy of the statue has ever been found, and details of its form are known only from ancient Greek descriptions and representations on coins."], ["name", "Statue of Zeus at Olympia"], ["url", "http://www.annodomini.org.uk/wp-content/uploads/2012/08/ZeusStatue.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "The Mausoleum at Halicarnassus or Tomb of Mausolus Modern was a tomb built between 353 and 350 BC at Halicarnassus (present Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire, and Artemisia II of Caria, who was both his wife and his sister. The structure was designed by the Greek architects Satyros and Pythius of Priene."], ["name", "Mausoleum at Halicarnassus"], ["url", "https://upload.wikimedia.org/wikipedia/commons/f/f4/The_ruins_of_the_Mausoleum_at_Halicarnassus.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (4.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world."], ["name", "Colossus of Rhodes"], ["url", "http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "A lighthouse built by the Ptolemaic Kingdom between 280 and 247 BC which was between 393 and 450 ft (120 and 137 m) tall. It was one of the tallest man-made structures in the world for many centuries, and was regarded as one of the Seven Wonders of the Ancient World. Badly damaged by three earthquakes between AD 956 and 1323, it then became an abandoned ruin. It was the third longest surviving ancient wonder (after the Mausoleum at Halicarnassus and the extant Great Pyramid of Giza) until in 1480 the last of its remnant stones were used to build the Citadel of Qaitbay on the site. In 1994, French archaeologists discovered some remains of the lighthouse on the floor of Alexandria's Eastern Harbour."], ["name", "Lighthouse of Alexandria"], ["url", "http://www.touregypt.net/images/touregypt/pharos2.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 800], ["description", "The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery."], ["name", "The Grand Canyon"], ["url", "https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg"], ["w_type", "Natural"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:55:22 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:55:26 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:55:53 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `/' for "4400":String):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(place.admis_price/100)%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193067783220'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193067783220'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193067783220'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:57:49 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `/' for "4400":String):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency((place.admis_price)/100)%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193076700940'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193076700940'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193076700940'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 11:58:20 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `/' for "4400":String):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency((place.admis_price) / 100)%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193073928240'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193073928240'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193073928240'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:02:01 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `admis_pricei' for #<Place:0x007fae32457800>):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(fdiv(place.admis_pricei,100))%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193072318260'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193072318260'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193072318260'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:02:13 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `fdiv' for #<#<Class:0x007fae3257de28>:0x007fae3220c8e8>):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(fdiv(place.admis_price,100))%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193067235160'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193067235160'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193067235160'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:03:37 -0500
+Processing by PlacesController#index as HTML
+  Rendered places/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/places/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+  app/views/places/index.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+  app/views/places/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/places/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (73.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:03:50 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `/' for "4400":String):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= place.admis_price/100%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193076686140'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193076686140'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193076686140'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.1ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TEMPORARY TABLE "aplaces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "admis_price" varchar(255), "description" text, "name" varchar(255), "wonder_id" integer, "w_type" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_places_on_wonder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_places_on_wonder_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "tindex_aplaces_on_wonder_id" ON "aplaces" ("wonder_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "places"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (96, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg/1024px-Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg', '4400', 'The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza Necropolis bordering what is now El Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact.', 'The Great Pyramid of Giza', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (97, 'http://www.history.com/news/wp-content/uploads/2013/05/Hanging-Gardens-of-Babylon.jpg', '0', 'The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, and the only one whose location has not been definitely established.', 'Hanging Gardens of Babylon', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (98, 'https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg', '0', 'The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain.', 'Temple of Artemis', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (99, 'http://www.annodomini.org.uk/wp-content/uploads/2012/08/ZeusStatue.jpg', '0', 'The Statue of Zeus at Olympia was a giant seated figure, about 13 m (43 ft) tall,[1] made by the Greek sculptor Phidias around 435 BC at the sanctuary of Olympia, Greece, and erected in the Temple of Zeus there. A sculpture of ivory plates and gold panels over a wooden framework, it represented the god Zeus sitting on an elaborate cedar wood throne ornamented with ebony, ivory, gold and precious stones. It was regarded as one of the Seven Wonders of the Ancient World until its eventual loss and destruction during the 5th century AD.[2] No copy of the statue has ever been found, and details of its form are known only from ancient Greek descriptions and representations on coins.', 'Statue of Zeus at Olympia', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (100, 'https://upload.wikimedia.org/wikipedia/commons/f/f4/The_ruins_of_the_Mausoleum_at_Halicarnassus.jpg', '0', 'The Mausoleum at Halicarnassus or Tomb of Mausolus Modern was a tomb built between 353 and 350 BC at Halicarnassus (present Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire, and Artemisia II of Caria, who was both his wife and his sister. The structure was designed by the Greek architects Satyros and Pythius of Priene.', 'Mausoleum at Halicarnassus', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (101, 'http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg', '0', 'A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes'' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.', 'Colossus of Rhodes', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (102, 'http://www.touregypt.net/images/touregypt/pharos2.jpg', '0', 'A lighthouse built by the Ptolemaic Kingdom between 280 and 247 BC which was between 393 and 450 ft (120 and 137 m) tall. It was one of the tallest man-made structures in the world for many centuries, and was regarded as one of the Seven Wonders of the Ancient World. Badly damaged by three earthquakes between AD 956 and 1323, it then became an abandoned ruin. It was the third longest surviving ancient wonder (after the Mausoleum at Halicarnassus and the extant Great Pyramid of Giza) until in 1480 the last of its remnant stones were used to build the Citadel of Qaitbay on the site. In 1994, French archaeologists discovered some remains of the lighthouse on the floor of Alexandria''s Eastern Harbour.', 'Lighthouse of Alexandria', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "aplaces" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (103, 'https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg', '800', 'The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery.', 'The Grand Canyon', NULL, 'Natural')
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "places"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "admis_price" integer(255), "description" text, "name" varchar(255), "wonder_id" integer, "w_type" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aplaces_on_wonder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aplaces_on_wonder_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_places_on_wonder_id" ON "places" ("wonder_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aplaces"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (96, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg/1024px-Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg', '4400', 'The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza Necropolis bordering what is now El Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact.', 'The Great Pyramid of Giza', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (97, 'http://www.history.com/news/wp-content/uploads/2013/05/Hanging-Gardens-of-Babylon.jpg', '0', 'The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, and the only one whose location has not been definitely established.', 'Hanging Gardens of Babylon', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (98, 'https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg', '0', 'The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain.', 'Temple of Artemis', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (99, 'http://www.annodomini.org.uk/wp-content/uploads/2012/08/ZeusStatue.jpg', '0', 'The Statue of Zeus at Olympia was a giant seated figure, about 13 m (43 ft) tall,[1] made by the Greek sculptor Phidias around 435 BC at the sanctuary of Olympia, Greece, and erected in the Temple of Zeus there. A sculpture of ivory plates and gold panels over a wooden framework, it represented the god Zeus sitting on an elaborate cedar wood throne ornamented with ebony, ivory, gold and precious stones. It was regarded as one of the Seven Wonders of the Ancient World until its eventual loss and destruction during the 5th century AD.[2] No copy of the statue has ever been found, and details of its form are known only from ancient Greek descriptions and representations on coins.', 'Statue of Zeus at Olympia', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (100, 'https://upload.wikimedia.org/wikipedia/commons/f/f4/The_ruins_of_the_Mausoleum_at_Halicarnassus.jpg', '0', 'The Mausoleum at Halicarnassus or Tomb of Mausolus Modern was a tomb built between 353 and 350 BC at Halicarnassus (present Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire, and Artemisia II of Caria, who was both his wife and his sister. The structure was designed by the Greek architects Satyros and Pythius of Priene.', 'Mausoleum at Halicarnassus', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (101, 'http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg', '0', 'A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes'' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.', 'Colossus of Rhodes', NULL, 'Ancient')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (102, 'http://www.touregypt.net/images/touregypt/pharos2.jpg', '0', 'A lighthouse built by the Ptolemaic Kingdom between 280 and 247 BC which was between 393 and 450 ft (120 and 137 m) tall. It was one of the tallest man-made structures in the world for many centuries, and was regarded as one of the Seven Wonders of the Ancient World. Badly damaged by three earthquakes between AD 956 and 1323, it then became an abandoned ruin. It was the third longest surviving ancient wonder (after the Mausoleum at Halicarnassus and the extant Great Pyramid of Giza) until in 1480 the last of its remnant stones were used to build the Citadel of Qaitbay on the site. In 1994, French archaeologists discovered some remains of the lighthouse on the floor of Alexandria''s Eastern Harbour.', 'Lighthouse of Alexandria', NULL, 'Ancient')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "places" ("id","url","admis_price","description","name","wonder_id","w_type") VALUES (103, 'https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg', '800', 'The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery.', 'The Grand Canyon', NULL, 'Natural')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aplaces"
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_places_on_wonder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_places_on_wonder_id' AND type='index'
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_places_on_wonder_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_places_on_wonder_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (3.9ms)[0m  DELETE FROM "places"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 4400], ["description", "The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza Necropolis bordering what is now El Giza, Egypt. It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact."], ["name", "The Great Pyramid of Giza"], ["url", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg/1024px-Great_Pyramid_of_Giza,_Giza,_Egypt8.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Hanging Gardens of Babylon were one of the Seven Wonders of the Ancient World, and the only one whose location has not been definitely established."], ["name", "Hanging Gardens of Babylon"], ["url", "http://www.history.com/news/wp-content/uploads/2013/05/Hanging-Gardens-of-Babylon.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain."], ["name", "Temple of Artemis"], ["url", "https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "The Statue of Zeus at Olympia was a giant seated figure, about 13 m (43 ft) tall,[1] made by the Greek sculptor Phidias around 435 BC at the sanctuary of Olympia, Greece, and erected in the Temple of Zeus there. A sculpture of ivory plates and gold panels over a wooden framework, it represented the god Zeus sitting on an elaborate cedar wood throne ornamented with ebony, ivory, gold and precious stones. It was regarded as one of the Seven Wonders of the Ancient World until its eventual loss and destruction during the 5th century AD.[2] No copy of the statue has ever been found, and details of its form are known only from ancient Greek descriptions and representations on coins."], ["name", "Statue of Zeus at Olympia"], ["url", "http://www.annodomini.org.uk/wp-content/uploads/2012/08/ZeusStatue.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "The Mausoleum at Halicarnassus or Tomb of Mausolus Modern was a tomb built between 353 and 350 BC at Halicarnassus (present Bodrum, Turkey) for Mausolus, a satrap in the Persian Empire, and Artemisia II of Caria, who was both his wife and his sister. The structure was designed by the Greek architects Satyros and Pythius of Priene."], ["name", "Mausoleum at Halicarnassus"], ["url", "https://upload.wikimedia.org/wikipedia/commons/f/f4/The_ruins_of_the_Mausoleum_at_Halicarnassus.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 0], ["description", "A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world."], ["name", "Colossus of Rhodes"], ["url", "http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg"], ["w_type", "Ancient"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 0], ["description", "A lighthouse built by the Ptolemaic Kingdom between 280 and 247 BC which was between 393 and 450 ft (120 and 137 m) tall. It was one of the tallest man-made structures in the world for many centuries, and was regarded as one of the Seven Wonders of the Ancient World. Badly damaged by three earthquakes between AD 956 and 1323, it then became an abandoned ruin. It was the third longest surviving ancient wonder (after the Mausoleum at Halicarnassus and the extant Great Pyramid of Giza) until in 1480 the last of its remnant stones were used to build the Citadel of Qaitbay on the site. In 1994, French archaeologists discovered some remains of the lighthouse on the floor of Alexandria's Eastern Harbour."], ["name", "Lighthouse of Alexandria"], ["url", "http://www.touregypt.net/images/touregypt/pharos2.jpg"], ["w_type", "Ancient"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)[0m  [["admis_price", 800], ["description", "The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery."], ["name", "The Grand Canyon"], ["url", "https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg"], ["w_type", "Natural"]]
+  [1m[35m (3.9ms)[0m  commit transaction
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:04:55 -0500
+Processing by PlacesController#index as HTML
+  Rendered places/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/places/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+  app/views/places/index.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+  app/views/places/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/places/index.html.erb:19: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (69.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:05:05 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.5ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:08:41 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.3ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/places/new?type=Ancient" for 127.0.0.1 at 2015-07-14 12:08:43 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Ancient"}
+  Rendered places/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/new?type=Ancient" for 127.0.0.1 at 2015-07-14 12:09:19 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Ancient"}
+  Rendered places/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/new?type=Ancient" for 127.0.0.1 at 2015-07-14 12:09:50 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Ancient"}
+  Rendered places/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-07-14 12:11:26 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-14 12:11:29 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-14 12:12:13 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `number_to_currencey' for #<#<Class:0x007fae3262dff8>:0x007fae31bb7d30>):
+    4:   <h2> <%= @place.name %> </h2>
+    5:   <h4> (The <%= @place.w_type %> World) </h4> 
+    6:   <p> <%= @place.description %></p>
+    7:   <h3> Admission: <%= number_to_currencey(@place.admis_price/100) %> </h3>
+    8: 
+    9: </div>
+  app/views/places/show.html.erb:7:in `_app_views_places_show_html_erb___1646346496767646171_70193067699760'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.4ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-14 12:12:41 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/edit" for 127.0.0.1 at 2015-07-14 12:14:23 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/edit" for 127.0.0.1 at 2015-07-14 12:15:17 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-07-14 12:15:25 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Great%20Pyramid%20of%20Giza" for 127.0.0.1 at 2015-07-14 12:15:30 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Great Pyramid of Giza"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Great Pyramid of Giza' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Great%20Pyramid%20of%20Giza/edit" for 127.0.0.1 at 2015-07-14 12:15:33 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"The Great Pyramid of Giza"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Great Pyramid of Giza' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Great%20Pyramid%20of%20Giza/edit" for 127.0.0.1 at 2015-07-14 12:15:49 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"The Great Pyramid of Giza"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Great Pyramid of Giza' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:17:12 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.4ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/new?type=Underwater" for 127.0.0.1 at 2015-07-14 12:17:17 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Underwater"}
+  Rendered places/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-07-14 12:23:46 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.4ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 64ms (Views: 55.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/new?type=Underwater" for 127.0.0.1 at 2015-07-14 12:23:49 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Underwater"}
+  Rendered places/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/submit_new?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=13.94&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:24:13 -0500
+Processing by PlacesController#create as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"13.94", "description"=>"v,mnsfsdnfjdsfjkld"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `*' for :price:Symbol):
+  app/controllers/places_controller.rb:22:in `create'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (77.1ms)
+
+
+Started GET "/places/submit_new?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=13.94&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:26:08 -0500
+
+SyntaxError (/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/controllers/places_controller.rb:22: syntax error, unexpected '=', expecting keyword_end
+    :price = :price*100
+            ^
+/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/controllers/places_controller.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    :price=price*100
+                ^):
+  app/controllers/places_controller.rb:22: syntax error, unexpected '=', expecting keyword_end
+  app/controllers/places_controller.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (73.9ms)
+
+
+Started GET "/places/submit_new?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=13.94&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:26:42 -0500
+
+SyntaxError (/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/controllers/places_controller.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    :price=price*100
+                ^):
+  app/controllers/places_controller.rb:33: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (79.1ms)
+
+
+Started GET "/places/submit_new?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=13.94&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:27:04 -0500
+Processing by PlacesController#create as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"13.94", "description"=>"v,mnsfsdnfjdsfjkld"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 13], ["description", "v,mnsfsdnfjdsfjkld"], ["name", "ljfwlkehjwjek"], ["url", "http://animalia-life.com/data_images/dog/dog6.jpg"], ["w_type", "Underwater"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:27:04 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:27:09 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 98ms (Views: 96.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:27:28 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.3ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=14.20&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:27:38 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"14.20", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 14]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 7ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:27:38 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:27:40 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:28:14 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 31.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:28:16 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=13.42&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:28:21 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"13.42", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 13]]
+  [1m[35m (56.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 60ms (ActiveRecord: 56.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:28:21 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:29:03 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 41ms (Views: 34.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=20.12&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:29:08 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"20.12", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 20]]
+  [1m[35m (118.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 124ms (ActiveRecord: 119.5ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:29:09 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:30:45 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 37ms (Views: 30.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=10&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:30:49 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"10", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 10101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010]]
+  [1m[35m (30.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 351ms (ActiveRecord: 31.4ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:30:49 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:31:29 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 29.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=10&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:31:38 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"10", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 10]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:31:38 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:32:12 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 29.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=14.12&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:32:16 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"14.12", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 14]]
+  [1m[35m (50.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 54ms (ActiveRecord: 51.4ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:32:17 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:33:15 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 37ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=15.2&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:33:19 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"15.2", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 15]]
+  [1m[35m (54.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 59ms (ActiveRecord: 55.9ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:33:19 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:34:44 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 37ms (Views: 30.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=30.00&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:34:49 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"30.00", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/places_controller.rb:33:in `+'
+  app/controllers/places_controller.rb:33:in `update'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (76.0ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=30.00&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:37:04 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"30.00", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 34]]
+  [1m[35m (52.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 62ms (ActiveRecord: 53.4ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:37:04 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:37:08 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 100ms (Views: 99.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:37:10 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:37:19 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=14.2&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:37:28 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"14.2", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112[0m  [["admis_price", 18]]
+  [1m[35m (77.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 82ms (ActiveRecord: 78.4ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:37:28 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:37:46 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 37.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:38:34 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 37ms (Views: 30.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:38:43 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 30.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:38:54 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=http%3A%2F%2Fanimalia-life.com%2Fdata_images%2Fdog%2Fdog6.jpg&price=9&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:39:34 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"http://animalia-life.com/data_images/dog/dog6.jpg", "price"=>"9", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112  [["admis_price", 9]]
+  [1m[36m (167.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 173ms (ActiveRecord: 168.0ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:39:34 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.3ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:40:28 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=14&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:40:35 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"14", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "admis_price" = ?, "url" = ? WHERE "places"."id" = 112  [["admis_price", 14], ["url", "https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg"]]
+  [1m[36m (52.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 56ms (ActiveRecord: 52.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:40:35 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/edit" for 127.0.0.1 at 2015-07-14 12:40:47 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/ljfwlkehjwjek/update?name=ljfwlkehjwjek&type=Underwater&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=13&description=v%2Cmnsfsdnfjdsfjkld" for 127.0.0.1 at 2015-07-14 12:40:52 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"ljfwlkehjwjek", "type"=>"Underwater", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"13", "description"=>"v,mnsfsdnfjdsfjkld", "id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 112  [["admis_price", 13]]
+  [1m[36m (49.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/ljfwlkehjwjek
+Completed 302 Found in 54ms (ActiveRecord: 50.0ms)
+
+
+Started GET "/places/ljfwlkehjwjek" for 127.0.0.1 at 2015-07-14 12:40:52 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[35mPlace Load (0.3ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:41:20 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 102ms (Views: 101.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:41:22 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:41:24 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=0.05&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:41:29 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"0.05", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 109  [["admis_price", 0]]
+  [1m[36m (53.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 56ms (ActiveRecord: 53.6ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:41:29 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:42:44 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=20&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:42:56 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"20", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.3ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 109  [["admis_price", 20]]
+  [1m[36m (50.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 55ms (ActiveRecord: 51.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:42:56 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:43:37 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:43:48 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 109  [["admis_price", 8]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:43:48 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:44:39 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:44:43 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `to_int' for "8.00":String):
+  app/controllers/places_controller.rb:33:in `update'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (81.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:45:03 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:45:03 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:45:05 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:45:10 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:45:10 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:45:37 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 37ms (Views: 30.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:45:41 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `to_int' for "8.00":String):
+  app/controllers/places_controller.rb:38:in `update'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (72.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:45:50 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:45:50 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:45:52 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:45:56 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:45:56 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:47:09 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 41ms (Views: 34.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:47:15 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:47:15 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:47:30 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 30.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:47:36 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:47:36 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/edit" for 127.0.0.1 at 2015-07-14 12:48:03 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[35mPlace Load (0.1ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 28.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes/update?name=Colossus+of+Rhodes&type=Ancient&url=http%3A%2F%2Fpre08.deviantart.net%2F8721%2Fth%2Fpre%2Ff%2F2012%2F198%2F0%2Ff%2Fcolossus_of_rhodes_by_giovanino-d57e2nv.jpg&price=8.00&description=A+statue+of+the+Greek+titan-god+of+the+sun+Helios%2C+erected+in+the+city+of+Rhodes%2C+on+the+Greek+island+of+the+same+name%2C+by+Chares+of+Lindos+in+280+BC.+It+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+constructed+to+celebrate+Rhodes%27+victory+over+the+ruler+of+Cyprus%2C+Antigonus+I+Monophthalmus%2C+whose+son+unsuccessfully+besieged+Rhodes+in+305+BC.+Before+its+destruction+in+the+earthquake+of+226+BC%2C+the+Colossus+of+Rhodes+stood+over+30+metres+%2898+feet%29+high%2C+making+it+one+of+the+tallest+statues+of+the+ancient+world." for 127.0.0.1 at 2015-07-14 12:48:09 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Colossus of Rhodes", "type"=>"Ancient", "url"=>"http://pre08.deviantart.net/8721/th/pre/f/2012/198/0/f/colossus_of_rhodes_by_giovanino-d57e2nv.jpg", "price"=>"8.00", "description"=>"A statue of the Greek titan-god of the sun Helios, erected in the city of Rhodes, on the Greek island of the same name, by Chares of Lindos in 280 BC. It is one of the Seven Wonders of the Ancient World. It was constructed to celebrate Rhodes' victory over the ruler of Cyprus, Antigonus I Monophthalmus, whose son unsuccessfully besieged Rhodes in 305 BC. Before its destruction in the earthquake of 226 BC, the Colossus of Rhodes stood over 30 metres (98 feet) high, making it one of the tallest statues of the ancient world.", "id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 109[0m  [["admis_price", 800]]
+  [1m[35m (52.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/Colossus%20of%20Rhodes
+Completed 302 Found in 56ms (ActiveRecord: 52.9ms)
+
+
+Started GET "/places/Colossus%20of%20Rhodes" for 127.0.0.1 at 2015-07-14 12:48:09 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Colossus of Rhodes"}
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Colossus of Rhodes' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:49:31 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.4ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 187ms (Views: 184.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/new?type=Industrial" for 127.0.0.1 at 2015-07-14 12:49:34 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Industrial"}
+  Rendered places/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 94ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/submit_new?name=dfdsfdfsdf&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=42.23&description=%3Bfjalfkjaslfjkhaskjflha+awjrhlkjwfb" for 127.0.0.1 at 2015-07-14 12:49:49 -0500
+Processing by PlacesController#create as HTML
+  Parameters: {"name"=>"dfdsfdfsdf", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"42.23", "description"=>";fjalfkjaslfjkhaskjflha awjrhlkjwfb"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 4223], ["description", ";fjalfkjaslfjkhaskjflha awjrhlkjwfb"], ["name", "dfdsfdfsdf"], ["url", "https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg"], ["w_type", "Industrial"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:49:49 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 12:49:59 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf/edit" for 127.0.0.1 at 2015-07-14 12:50:01 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf/update?name=dfdsfdfsdf&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=42.23&description=%3Bfjalfkjaslfjkhaskjflha+awjrhlkjwfb" for 127.0.0.1 at 2015-07-14 12:50:05 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"dfdsfdfsdf", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"42.23", "description"=>";fjalfkjaslfjkhaskjflha awjrhlkjwfb", "id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/dfdsfdfsdf
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 12:50:05 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf/edit" for 127.0.0.1 at 2015-07-14 12:50:40 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/dfdsfdfsdf/update?name=dfdsfdfsdf&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=42.13&description=%3Bfjalfkjaslfjkhaskjflha+awjrhlkjwfb" for 127.0.0.1 at 2015-07-14 12:50:44 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"dfdsfdfsdf", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"42.13", "description"=>";fjalfkjaslfjkhaskjflha awjrhlkjwfb", "id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 113  [["admis_price", 4213]]
+  [1m[36m (47.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/dfdsfdfsdf
+Completed 302 Found in 51ms (ActiveRecord: 47.7ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 12:50:44 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf/edit" for 127.0.0.1 at 2015-07-14 12:52:18 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.1ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  Rendered places/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 30.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places/dfdsfdfsdf/update?name=dfdsfdfsdf&type=Industrial&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=42.13&description=%3Bfjalfkjaslfjkhaskjflha+awjrhlkjwfb" for 127.0.0.1 at 2015-07-14 12:52:20 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"dfdsfdfsdf", "type"=>"Industrial", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>"42.13", "description"=>";fjalfkjaslfjkhaskjflha awjrhlkjwfb", "id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/dfdsfdfsdf
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 12:52:20 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dfdsfdfsdf" for 127.0.0.1 at 2015-07-14 12:53:03 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dfdsfdfsdf"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dfdsfdfsdf' LIMIT 1
+  Rendered places/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:53:06 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 12:53:50 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 33ms (Views: 32.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:03:45 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.4ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `price_dollars' for #<Place:0x007fae3251e1a8>):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(place.price_dollars)%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193072714740'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193072714740'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193072714740'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:03:46 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `price_dollars' for #<Place:0x007fae31b0bad0>):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= number_to_currency(place.price_dollars)%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193083978200'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193083978200'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193083978200'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:06:47 -0500
+Processing by PlacesController#index as HTML
+  Rendered places/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/Users/billyfortin/Desktop/School/webdev/hw/hw3/app/views/places/index.html.erb:9: syntax error, unexpected ')', expecting keyword_end
+....append=( place.price_dollars));@output_buffer.safe_append=')
+...                               ^):
+  app/views/places/index.html.erb:9: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (80.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:07:06 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.4ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `price_dollars' for #<Place:0x007fae32d6d958>):
+     6:       <ul>
+     7:       <% @places.each do |place| %>
+     8:         <% if place.w_type == type %>
+     9:         <li> <%= link_to place.name, "/places/#{place.name}" %> (<%= place.price_dollars%>)
+    10:           <%= link_to "  ...delete", "/places/#{place.name}/delete" %> </li>
+    11:         <% end %>
+    12:       <% end %>
+  app/views/places/index.html.erb:9:in `block (2 levels) in _app_views_places_index_html_erb__311339486016268720_70193084359180'
+  app/views/places/index.html.erb:7:in `block in _app_views_places_index_html_erb__311339486016268720_70193084359180'
+  app/views/places/index.html.erb:4:in `each'
+  app/views/places/index.html.erb:4:in `_app_views_places_index_html_erb__311339486016268720_70193084359180'
+
+
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/billyfortin/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.3ms)
+  [1m[36mPlace Load (0.7ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  [1m[35mPlace Load (0.3ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:35:37 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.4ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 77ms (Views: 62.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/places/Temple%20of%20Artemis" for 127.0.0.1 at 2015-07-14 13:35:42 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Temple of Artemis"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Temple%20of%20Artemis/edit" for 127.0.0.1 at 2015-07-14 13:35:45 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"Temple of Artemis"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/Temple%20of%20Artemis/update?name=Temple+of+Artemis&type=Ancient&url=https%3A%2F%2Fdaydreamtourist.files.wordpress.com%2F2013%2F07%2Ftemple-of-artemis.jpg&price=30.02&description=The+Temple+of+Artemis+or+Artemision+%28Greek%3A+%E1%BC%88%CF%81%CF%84%CE%B5%CE%BC%CE%AF%CF%83%CE%B9%CE%BF%CE%BD%2C+Turkish%3A+Artemis+Tap%C4%B1na%C4%9F%C4%B1%29%2C+also+known+less+precisely+as+the+Temple+of+Diana%2C+was+a+Greek+temple+dedicated+to+the+goddess+Artemis+and+is+one+of+the+Seven+Wonders+of+the+Ancient+World.+It+was+located+in+Ephesus+%28near+the+modern+town+of+Sel%C3%A7uk+in+present-day+Turkey%29%2C+and+was+completely+rebuilt+three+times+before+its+eventual+destruction+in+401.+Only+foundations+and+sculptural+fragments+of+the+latest+of+the+temples+at+the+site+remain." for 127.0.0.1 at 2015-07-14 13:35:54 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"Temple of Artemis", "type"=>"Ancient", "url"=>"https://daydreamtourist.files.wordpress.com/2013/07/temple-of-artemis.jpg", "price"=>"30.02", "description"=>"The Temple of Artemis or Artemision (Greek: Ἀρτεμίσιον, Turkish: Artemis Tapınağı), also known less precisely as the Temple of Diana, was a Greek temple dedicated to the goddess Artemis and is one of the Seven Wonders of the Ancient World. It was located in Ephesus (near the modern town of Selçuk in present-day Turkey), and was completely rebuilt three times before its eventual destruction in 401. Only foundations and sculptural fragments of the latest of the temples at the site remain.", "id"=>"Temple of Artemis"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 106[0m  [["admis_price", 3002]]
+  [1m[35m (56.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/Temple%20of%20Artemis
+Completed 302 Found in 61ms (ActiveRecord: 57.4ms)
+
+
+Started GET "/places/Temple%20of%20Artemis" for 127.0.0.1 at 2015-07-14 13:35:54 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"Temple of Artemis"}
+  [1m[36mPlace Load (0.3ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'Temple of Artemis' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:35:59 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/new?type=Underwater" for 127.0.0.1 at 2015-07-14 13:36:03 -0500
+Processing by PlacesController#new as HTML
+  Parameters: {"type"=>"Underwater"}
+  Rendered places/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 63ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/submit_new?name=dasdsa&type=Underwater&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fc%2Fc7%2FPuppy_on_Halong_Bay.jpg&price=.10&description=vs%3Bljfsdljkchldskc" for 127.0.0.1 at 2015-07-14 13:36:50 -0500
+Processing by PlacesController#create as HTML
+  Parameters: {"name"=>"dasdsa", "type"=>"Underwater", "url"=>"https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg", "price"=>".10", "description"=>"vs;ljfsdljkchldskc"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "places" ("admis_price", "description", "name", "url", "w_type") VALUES (?, ?, ?, ?, ?)  [["admis_price", 10], ["description", "vs;ljfsdljkchldskc"], ["name", "dasdsa"], ["url", "https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg"], ["w_type", "Underwater"]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:36:50 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dasdsa" for 127.0.0.1 at 2015-07-14 13:36:52 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"dasdsa"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'dasdsa' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:36:56 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/ljfwlkehjwjek/delete" for 127.0.0.1 at 2015-07-14 13:37:36 -0500
+Processing by PlacesController#delete as HTML
+  Parameters: {"id"=>"ljfwlkehjwjek"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'ljfwlkehjwjek' LIMIT 1[0m
+  [1m[35mSQL (48.8ms)[0m  DELETE FROM "places" WHERE "places"."id" = 112
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 49.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:37:36 -0500
+Processing by PlacesController#index as HTML
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/dasdsa/delete" for 127.0.0.1 at 2015-07-14 13:37:40 -0500
+Processing by PlacesController#delete as HTML
+  Parameters: {"id"=>"dasdsa"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'dasdsa' LIMIT 1
+  [1m[36mSQL (53.7ms)[0m  [1mDELETE FROM "places" WHERE "places"."id" = 114[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 56ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-14 13:37:40 -0500
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-14 13:37:42 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/edit" for 127.0.0.1 at 2015-07-14 13:37:44 -0500
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[35mPlace Load (0.2ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1
+  Rendered places/edit.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places/The%20Grand%20Canyon/update?name=The+Grand+Canyon&type=Natural&url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Faf%2FGrand_Canyon_view_from_Pima_Point_2010.jpg&price=8.1&description=The+Grand+Canyon+%28Hopi%3A+Ongtupqa%3B+Yavapai%3A+Wi%3Aka%CA%BCi%3Ala%2C+Spanish%3A+Gran+Ca%C3%B1%C3%B3n%29%2C+is+a+steep-sided+canyon+carved+by+the+Colorado+River+in+the+state+of+Arizona+in+the+United+States.+It+is+contained+within+and+managed+by+Grand+Canyon+National+Park%2C+the+Kaibab+National+Forest%2C+Grand+Canyon-Parashant+National+Monument%2C+the+Hualapai+Tribal+Nation%2C+the+Havasupai+Tribe+and+the+Navajo+Nation.+President+Theodore+Roosevelt+was+a+major+proponent+of+preservation+of+the+Grand+Canyon+area%2C+and+visited+it+on+numerous+occasions+to+hunt+and+enjoy+the+scenery." for 127.0.0.1 at 2015-07-14 13:37:48 -0500
+Processing by PlacesController#update as HTML
+  Parameters: {"name"=>"The Grand Canyon", "type"=>"Natural", "url"=>"https://upload.wikimedia.org/wikipedia/commons/a/af/Grand_Canyon_view_from_Pima_Point_2010.jpg", "price"=>"8.1", "description"=>"The Grand Canyon (Hopi: Ongtupqa; Yavapai: Wi:kaʼi:la, Spanish: Gran Cañón), is a steep-sided canyon carved by the Colorado River in the state of Arizona in the United States. It is contained within and managed by Grand Canyon National Park, the Kaibab National Forest, Grand Canyon-Parashant National Monument, the Hualapai Tribal Nation, the Havasupai Tribe and the Navajo Nation. President Theodore Roosevelt was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery.", "id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "places" SET "admis_price" = ? WHERE "places"."id" = 111[0m  [["admis_price", 810]]
+  [1m[35m (11.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/The%20Grand%20Canyon
+Completed 302 Found in 20ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/places/The%20Grand%20Canyon" for 127.0.0.1 at 2015-07-14 13:37:48 -0500
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"The Grand Canyon"}
+  [1m[36mPlace Load (0.2ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."name" = 'The Grand Canyon' LIMIT 1[0m
+  Rendered places/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.2ms)

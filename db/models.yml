@@ -4,7 +4,7 @@ Place
   wonder_id: integer
   name: string
   url: string
-  admis_price: string
+  admis_price: integer 
   w_type: string
   description: text
 

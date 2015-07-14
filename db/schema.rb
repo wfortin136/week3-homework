@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "places", force: true do |t|
     t.string  "url"
-    t.string  "admis_price"
+    t.integer "admis_price", limit: 255
     t.text    "description"
     t.string  "name"
     t.integer "wonder_id"
